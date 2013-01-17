@@ -330,13 +330,13 @@ function getSkinCss(event, opt) {
 		opt('eventTextColor');
 	var statements = [];
 	if (backgroundColor) {
-		statements.push('background-color:' + backgroundColor);
+		statements.push('background-color:' + ($.isFunction(backgroundColor) ? backgroundColor() : backgroundColor));
 	}
 	if (borderColor) {
-		statements.push('border-color:' + borderColor);
+		statements.push('border-color:' + ($.isFunction(borderColor) ? borderColor() : borderColor));
 	}
 	if (textColor) {
-		statements.push('color:' + textColor);
+		statements.push('color:' + ($.isFunction(textColor) ? textColor() : textColor));
 	}
 	return statements.join(';');
 }
