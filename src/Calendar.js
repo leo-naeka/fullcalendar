@@ -182,6 +182,7 @@ function Calendar(element, options, eventSources) {
 			}
 			
 			ignoreWindowResize--;
+			currentView.trigger('viewChanged', null, oldView ? oldView.name : undefined, currentView.name);
 		}
 	}
 	
